@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="index.html">Sustainable<span>Shopper</span></a>
+
+            <img id="mobile-cta" class="menu-btn" src="{{ url_for('static', filename='images/menu.svg') }}"
+                alt="Open Navigation">
+
+
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Navigation">
+                <ul class="primary-nav">
+                    <li class="current"><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+
+                <ul class="secondary-nav">
+                    <li><a href="#">Contact</a></li>
+                    <li class="go-premium-cta"><a href="#">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="User input">
+        <h1>Item Barcode: {{barcode}}</h1>
+        <h1>Search your product barcode on a Amazon</h1>
+        <h1>And enter the following data: (If nothing found, enter None)</h1>
+        <form action="#" method="post">
+            <label for="Material">Material</label>
+            <textarea name="Material" id="message" cols="30" rows="10" placeholder="Your Message Here"></textarea>
+
+            <label for="Packaging Type">Packaging Type</label>
+            <textarea name="Packaging Type" id="message" cols="30" rows="10" placeholder="Your Message Here"></textarea>
+
+            <label for="Ingredients">Ingredients</label>
+            <textarea name="Ingredients" id="message" cols="30" rows="10" placeholder="Your Message Here"></textarea>
+
+
+            <input type="submit" class="send-message-cta" value="Send">
+        </form>
+
+
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="{{ url_for('home_page') }}">Sustainable<span>Shopper</span></a>
+
+            <img id="mobile-cta" class="menu-btn" src="{{ url_for('static', filename='images/menu.svg') }}"
+                alt="Open Navigation">
+
+
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Navigation">
+                <ul class="primary-nav">
+                    <li class="current"><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+
+                <ul class="secondary-nav">
+                    <li><a href="#">Contact</a></li>
+                    <li class="go-premium-cta"><a href="#">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section class="RESULTS">
+        <div class="container">
+            <div class="{{success_or_fail1}}">
+                <h2 class="Title">Sustainability Report</h2>
+                <ul class="Report">
+                    <li>Sustainability Score: {{score}}</li>
+                    <li>Materials: {{Materials}}</li>
+                    <li>Packaging Type: {{Packaging_Type}}</li>
+                    <li>Ingredients: {{Ingredients}}</li>
+                </ul>
+                <img src="{{name}}" alt="Low Score" class="{{name}}">
+            </div>
+            <div class="{{success_or_fail2}}">
+                <h2 class="Title">Sorry!</h2>
+                <h1>This product is not available in our database yet</h1>
+                <h1>It should be added soon</h1>
+                <h1>Still curious?</h1>
+                <a href="{{ url_for('User_input', barcode = barcode) }}">
+                    <h1>Click Here To Manually Enter The Data...</h1>
+                </a>
+            </div>
+        </div>
+    </section>
